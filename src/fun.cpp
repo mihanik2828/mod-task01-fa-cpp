@@ -22,7 +22,7 @@ unsigned int faStr1(const char* str)
                 }
                 else i++;
             }
-            if (!good) count++;
+            if (good) count++;
         }
         else i++;
     }
@@ -42,12 +42,12 @@ unsigned int faStr2(const char* str)
             {
                 i++;
                 good = true;
-                while (str[i] != ' ')
+                while ((str[i] != ' ') && (str[i] != '\0'))
                 {
                     if ((str[i] > 122) || (str[i] < 95)) good = false;
                     i++;
                 }
-                if (!good) count++;
+                if (good) count++;
             }
             else i++;
         }
@@ -67,9 +67,13 @@ unsigned int faStr3(const char* str)
     {
         if (str[i] != ' ')
         {
-            i++;
+            
             countSymbols++;
-            if (str[i + 1] == ' ') countWords++;
+            if ((str[i + 1] == ' ')||(str[i+1]=='\0')) 
+            { 
+                countWords++;
+            }
+            i++;
         }
         else i++;
     }
