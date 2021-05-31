@@ -9,4 +9,5 @@ int main()
 	std::cout << faStr2("Hello, world!") << "\n";
 	std::cout << faStr3(" bad dog ") << "\n";
 	system("pause");
+	return 0;
 }
